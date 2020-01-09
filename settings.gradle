@@ -1,0 +1,2 @@
+include ':app', ':personmodule', ':interface'
+rootProject.name='ComponentDemo'

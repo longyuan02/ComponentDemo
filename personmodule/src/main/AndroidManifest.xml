@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kt.personmodule" >
+    <application>
+        <activity android:name=".PersonSecondActivity"></activity>
+        <activity android:name=".PersonMainActivity"></activity>
+    </application>
+</manifest>

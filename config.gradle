@@ -1,0 +1,11 @@
+ext {
+    android = [
+            compileSdkVersion: 28,
+            buildToolsVersion: "29.0.2",
+            minSdkVersion    : 23,
+            targetSdkVersion : 28,
+            versionName      : "1.0",
+            versionCode      : 1,
+            applicationId: "com.kt.componentdemo",
+    ]
+}
