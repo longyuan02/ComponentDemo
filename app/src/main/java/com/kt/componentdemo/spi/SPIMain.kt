@@ -1,11 +1,10 @@
-package com.kt.componentdemo.isp
+package com.kt.componentdemo.spi
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.kt.aninterface.Display
 import com.kt.componentdemo.R
-import com.kt.componentdemo.proxy.Animal
 import com.kt.componentdemo.proxy.NullClass
 import com.kt.componentdemo.proxy.ProxyHandler
 import java.util.*
@@ -14,7 +13,7 @@ import com.kt.componentdemo.proxy.Fly
 import java.lang.reflect.Proxy
 
 
-class ISPMain : AppCompatActivity(), Fly {
+class SPIMain : AppCompatActivity(), Fly {
     override fun fly() {
         Log.e("ISPmain=====", "代理调用")
     }
@@ -40,7 +39,7 @@ class ISPMain : AppCompatActivity(), Fly {
         val loader = ServiceLoader.load(Display::class.java)
         val mIterator = loader.iterator()
         while (mIterator.hasNext()) {
-            Log.e("Log====", mIterator.next().display())
+            Log.e("Log====", mIterator.next().display() + "---" + mIterator.javaClass.simpleName)
         }
     }
 

@@ -19,7 +19,7 @@ import com.kt.componentdemo.Utils.Constant;
 import com.kt.componentdemo.annotation.InjectView;
 import com.kt.componentdemo.annotation.ProxyUtils;
 import com.kt.componentdemo.annotation.onClick;
-import com.kt.componentdemo.isp.ISPMain;
+import com.kt.componentdemo.spi.SPIMain;
 
 import java.util.Iterator;
 import java.util.ServiceLoader;
@@ -34,6 +34,7 @@ public class MainActivityJ extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ProxyUtils.getInstance(this);
+//        loadModule();
     }
 
     /*跳转路由*/
@@ -79,7 +80,7 @@ public class MainActivityJ extends AppCompatActivity implements View.OnClickList
         switch (v.getId()) {
             case R.id.tv:
 //                ArouterJump();
-                Intent intent = new Intent(MainActivityJ.this, ISPMain.class);
+                Intent intent = new Intent(MainActivityJ.this, SPIMain.class);
                 startActivity(intent);
                 finish();
                 break;

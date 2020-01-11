@@ -32,8 +32,6 @@ public interface Display {
 ### 注解,反射 实现位置 annotation
 [文章资源](https://jsbin.com/?html,output)
 
-
-
 ### 代理
 [文章资源](https://www.jianshu.com/p/b00ef12d53cc)
 1.静态代理
@@ -57,6 +55,16 @@ public interface Display {
         val fly = newProxyInstance as Fly
         fly.fly()
 
+```
+
+### APT
+[参考文章_APT](https://www.jianshu.com/p/cc8379522c5e)
+[JavaPoet_参考文章](https://blog.csdn.net/hq942845204/article/details/81185693)
+使用JavaLibrary
+>然后在module对应的build.gradle下，加入下面两个依赖
+```
+implementation 'com.squareup:javapoet:1.11.1'
+implementation 'com.google.auto.service:auto-service:1.0-rc4'
 ```
 
 

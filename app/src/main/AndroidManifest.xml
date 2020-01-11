@@ -19,7 +19,7 @@
         </activity>
         <activity android:name=".javapath.SecondActivityJ"></activity>
         <activity android:name=".javapath.fragment.MianFragment"></activity>
-        <activity android:name=".isp.ISPMain"></activity>
+        <activity android:name=".spi.SPIMain"></activity>
     </application>
 
 </manifest>

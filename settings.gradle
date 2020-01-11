@@ -1,2 +1,2 @@
-include ':app', ':personmodule', ':interface'
+include ':app', ':personmodule', ':interface', ':lib'
 rootProject.name='ComponentDemo'
