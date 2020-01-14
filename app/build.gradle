@@ -48,4 +48,5 @@ dependencies {
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
     implementation project(path: ':personmodule')
     implementation project(path: ':interface')
+    compile project(path: ':lib')
 }

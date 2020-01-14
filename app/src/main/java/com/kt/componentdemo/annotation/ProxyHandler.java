@@ -1,9 +1,7 @@
-package com.kt.componentdemo.proxy;
+package com.kt.componentdemo.annotation;
 
 import android.app.Activity;
 import android.util.Log;
-
-import com.kt.componentdemo.annotation.ProxyUtils;
 
 import java.lang.ref.WeakReference;
 import java.lang.reflect.InvocationHandler;
@@ -11,7 +9,9 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.HashMap;
 
-
+/**
+ * button点击是事件代理
+ */
 public class ProxyHandler implements InvocationHandler {
 
     private WeakReference<Activity> mHandlerRef;

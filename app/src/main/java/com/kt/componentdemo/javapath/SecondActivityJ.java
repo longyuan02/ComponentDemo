@@ -10,13 +10,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
-import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.kt.componentdemo.R;
-import com.kt.componentdemo.Utils.Constant;
 import com.kt.componentdemo.javapath.fragment.MianFragment;
+import com.kt.lib.RouteAnnotation;
 
-@Route(path = Constant.SECONDACTIVITY)
+@RouteAnnotation(name = "RouteName_ActivityTwo")
 public class SecondActivityJ extends AppCompatActivity {
     @Autowired(name = "name")
     public String name;

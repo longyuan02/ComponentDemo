@@ -3,6 +3,7 @@
 
 
 ### SPI (service provide interface)
+[参考文章](https://www.jianshu.com/p/deeb39ccdc53)
 [步骤]
 1.新建module 'interface'
 ```
@@ -30,7 +31,7 @@ public interface Display {
 [文章资源](https://www.jianshu.com/p/deeb39ccdc53)
 
 ### 注解,反射 实现位置 annotation
-[文章资源](https://jsbin.com/?html,output)
+[文章资源](https://www.jianshu.com/p/fad15887a05e)
 
 ### 代理
 [文章资源](https://www.jianshu.com/p/b00ef12d53cc)
@@ -40,11 +41,13 @@ public interface Display {
 ````
 2.动态代理
 ![avatar][proxy]
+[demo]包名--proxy
 关键类***InvocationHandler***
 +classLoader 
 获取被代理类ClassLoader
 +interfaces 获取被代理类实现方法
-+proxyHandler 执行动态代理
++proxyHandler 执行动态代理--映射到具体的实现类中
+SPIMain->GetProxyLoader()
 ```
         //在本activity中写的方法,只是为了说明方法调用
         var classLoader = javaClass.classLoader
@@ -60,15 +63,30 @@ public interface Display {
 ### APT
 [参考文章_APT](https://www.jianshu.com/p/cc8379522c5e)
 [JavaPoet_参考文章](https://blog.csdn.net/hq942845204/article/details/81185693)
-使用JavaLibrary
+新建Module:JavaLibrary 
 >然后在module对应的build.gradle下，加入下面两个依赖
 ```
 implementation 'com.squareup:javapoet:1.11.1'
 implementation 'com.google.auto.service:auto-service:1.0-rc4'
 ```
+继承AbstractProcessor类
+实现如下方法
+```
+@Override
+    public synchronized void init(ProcessingEnvironment processingEnvironment) {
+    }
+    public SourceVersion getSupportedSourceVersion() {
+            return SourceVersion.latestSupported();
+        }
+    public boolean process(Set<? extends TypeElement> set, RoundEnvironment roundEnvironment) {
+    return false;
+    }
+    @Override
+        public Set<String> getSupportedAnnotationTypes() {
+            return super.getSupportedAnnotationTypes();
+        }
 
-
-
+```
 
 ### kotlin空指针安全插曲 ISPMain.java
 >使用场景
@@ -79,6 +97,14 @@ var str:String =null//不可空对象
 "?"加在变量名后，系统在任何情况不会报它的空指针异常。
 "!!"加在变量名后，如果对象为null，那么系统一定会报异常！
 ```
+
+### 通过注解实现 
+1.findViewById
+>实现包 annotation/ProxyUtils.injectView   
+
+2.onClick
+>实现包 annotation/ProxyUtils.injectEvent   
+
 
 
 

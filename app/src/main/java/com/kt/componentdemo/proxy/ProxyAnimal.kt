@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.kt.componentdemo.R
 import kotlinx.android.synthetic.main.activity_isp_main.*
 
-class ProxyAnimal : AppCompatActivity(), Fly {
+open class ProxyAnimal : AppCompatActivity(), Fly {
     val TAG = javaClass.simpleName
     override fun fly() {
         Log.e(TAG, "======proxyfly")

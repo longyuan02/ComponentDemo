@@ -6,10 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.kt.aninterface.Display
 import com.kt.componentdemo.R
 import com.kt.componentdemo.proxy.NullClass
-import com.kt.componentdemo.proxy.ProxyHandler
+import com.kt.componentdemo.annotation.ProxyHandler
 import java.util.*
 import kotlinx.android.synthetic.main.activity_isp_main.*
 import com.kt.componentdemo.proxy.Fly
+import com.kt.componentdemo.proxy.ProxyAnimal
 import java.lang.reflect.Proxy
 
 
@@ -24,7 +25,7 @@ class SPIMain : AppCompatActivity(), Fly {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_isp_main)
         tv_isp.setOnClickListener {
-            GetProxyLoader();
+            GetProxyLoader()
             //可空对象不会报错
             Log.e("click=====", "??" + nullClass?.name)
         }
@@ -44,9 +45,10 @@ class SPIMain : AppCompatActivity(), Fly {
     }
 
     private fun GetProxyLoader() {
-        var classLoader = javaClass.classLoader
-        var interfaces = javaClass.interfaces
-        var proxyHandler = ProxyHandler(this)
+        var proxyAnimal = ProxyAnimal().javaClass
+        var classLoader = proxyAnimal.classLoader
+        var interfaces = ProxyAnimal().javaClass.javaClass.interfaces
+        var proxyHandler = ProxyHandler(ProxyAnimal())
         val newProxyInstance = Proxy.newProxyInstance(classLoader, interfaces, proxyHandler)
         val fly = newProxyInstance as Fly
         fly.fly()

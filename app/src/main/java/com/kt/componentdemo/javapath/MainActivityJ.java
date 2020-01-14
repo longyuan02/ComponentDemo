@@ -19,7 +19,7 @@ import com.kt.componentdemo.Utils.Constant;
 import com.kt.componentdemo.annotation.InjectView;
 import com.kt.componentdemo.annotation.ProxyUtils;
 import com.kt.componentdemo.annotation.onClick;
-import com.kt.componentdemo.spi.SPIMain;
+import com.kt.componentdemo.spi.SPIMainJ;
 
 import java.util.Iterator;
 import java.util.ServiceLoader;
@@ -80,7 +80,7 @@ public class MainActivityJ extends AppCompatActivity implements View.OnClickList
         switch (v.getId()) {
             case R.id.tv:
 //                ArouterJump();
-                Intent intent = new Intent(MainActivityJ.this, SPIMain.class);
+                Intent intent = new Intent(MainActivityJ.this, SPIMainJ.class);
                 startActivity(intent);
                 finish();
                 break;

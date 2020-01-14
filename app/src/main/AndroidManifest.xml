@@ -20,6 +20,7 @@
         <activity android:name=".javapath.SecondActivityJ"></activity>
         <activity android:name=".javapath.fragment.MianFragment"></activity>
         <activity android:name=".spi.SPIMain"></activity>
+        <activity android:name=".spi.SPIMainJ"></activity>
     </application>
 
 </manifest>
